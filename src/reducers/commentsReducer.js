@@ -1,7 +1,7 @@
-export default function postsReducer (
+export default function commentsReducer (
     state={
         loading: false, 
-        posts: []}, 
+        comments: []}, 
         action) {
     switch ( action.type ) {
      
