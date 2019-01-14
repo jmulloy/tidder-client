@@ -4,12 +4,12 @@ import { Navbar, Nav, NavItem, MenuItem, NavDropdown} from 'react-bootstrap';
 class Header extends React.Component {
     render() {
         return (
-            <Navbar fixedTop>
-             <Navbar.Header>
+            <Navbar>
+             {/* <Navbar.Header> */}
               <Navbar.Brand>
                   <a href='#'>Tidder</a>
               </Navbar.Brand>
-             </Navbar.Header>
+             {/* </Navbar.Header> */}
              <Navbar.Collapse>
               <Nav>
                   <NavItem eventKey={2} href="#"> About </NavItem>
