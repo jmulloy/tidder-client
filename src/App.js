@@ -12,7 +12,7 @@ class App extends Component {
       <h1>Posts Board</h1>
           <img src={logo} className="App-logo" alt="logo" />
        </div>
-       <PostsContainer />
+       {/* <PostsContainer /> */}
       </div>
     );
   }
