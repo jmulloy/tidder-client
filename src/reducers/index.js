@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import postsReducer from './posts_reducer';
-import commentsReducer from './comments_reducer';
+import postsReducer from './postsReducer';
+import commentsReducer from './commentsReducer';
 
 
  const rootReducer =  combineReducers({
