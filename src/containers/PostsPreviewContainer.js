@@ -25,7 +25,7 @@ export default class PostsPreviewContainer extends Component {
       <div>
         {this.state.posts.map((post) => {
           return(
-            <div className="tile" key={post.id} >
+            <div className="block" key={post.id} >
               <h4>{post.title}</h4>
               <p>{post.author}</p>
             </div>
@@ -35,3 +35,5 @@ export default class PostsPreviewContainer extends Component {
     );
   }
 }
+
+
