@@ -36,4 +36,10 @@ export default class PostsPreviewContainer extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    posts: () => dispatch(fetchPosts())
+  }
+}
 
+export default connect(null, mapDispatchToProps)(PostsPreviewContainer)
