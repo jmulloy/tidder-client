@@ -12,7 +12,12 @@ class PostsPreviewContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchPosts()
+    fetch('http://localhost:3005/api/posts')
+      .then(response => response.json())
+      
+      .then(data =>{
+        this.setState({posts: data})
+      }); 
   }
   render() {
     return (
