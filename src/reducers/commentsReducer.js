@@ -4,6 +4,10 @@ export default function commentsReducer (
         comments: []}, 
         action) {
     switch ( action.type ) {
+        case 'START_ADDING_COMMENTS':
+            return {...state, loading:true}
+        case 'ADD_COMMENTS':
+        return {loading:false, comments: action.comments}
      
       default:
         return state;
