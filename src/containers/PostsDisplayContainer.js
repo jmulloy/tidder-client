@@ -11,7 +11,7 @@ class PostsDisplayContainer extends Component {
     render() {
         return (
             <div>
-                This is a single Post
+                This is where the single post will be displayed. 
             </div>
         )
     }
@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => {
   }
   
   function mapStateToProps(state){
-    return {posts: state.posts.posts}
+    return {post: state.posts.post}
   }
   
   export default connect(mapStateToProps, mapDispatchToProps)(PostsDisplayContainer)

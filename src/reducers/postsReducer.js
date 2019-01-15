@@ -1,3 +1,4 @@
+
 export default function postsReducer (
     state={
         loading: false, 
@@ -9,7 +10,9 @@ export default function postsReducer (
          case 'FETCH_POSTS':
          
          return {...state, loading: false, posts: action.posts}
-      default:
+        case 'ADD_SINGLE_POST':
+        return {...state, loading: false, post: action.post}
+         default:
         return state;
     }
   

@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions/postsActions.js'
+import  PostDebut  from '../components/PostDebut'
 
 class PostsPreviewContainer extends Component {
 
   componentDidMount() {
     this.props.fetchPosts()
   }
+  displayPostsDebut = () => {
+    return this.props.posts.map(post => <PostDebut key={post.id} post={post} />) 
+  }
 
   render() {
     
     return (
       <div>
-        {this.props.posts && this.props.posts.map((post) => {
-          return(
-            <div className="block" key={post.id} >
-              <h4>{post.title}</h4>
-              <p>{post.author}</p>
-            </div>
-          )       
-        })}
+        <h2> Posts </h2>
+        {this.displayPostsDebut()}
       </div>
     );
   }
