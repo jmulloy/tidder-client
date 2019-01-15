@@ -4,25 +4,15 @@ import { fetchPosts } from '../actions/postsActions.js'
 
 class PostsPreviewContainer extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      posts: []
-    }
+  componentDidMount() {
+    this.props.fetchPosts()
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3005/api/posts')
-      .then(response => response.json())
-      
-      .then(data =>{
-        this.setState({posts: data})
-      }); 
-  }
   render() {
+    
     return (
       <div>
-        {this.state.posts.map((post) => {
+        {this.props.posts && this.props.posts.map((post) => {
           return(
             <div className="block" key={post.id} >
               <h4>{post.title}</h4>
@@ -37,7 +27,7 @@ class PostsPreviewContainer extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    posts: () => dispatch(fetchPosts())
+    fetchPosts: () => dispatch(fetchPosts())
   }
 }
 
