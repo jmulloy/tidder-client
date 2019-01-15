@@ -13,11 +13,9 @@ class Header extends React.Component {
              
              <Navbar.Collapse>
               <Nav>
-                  <NavItem eventKey={2} to='/about'>About</NavItem>
-                  <NavDropdown eventKey={3} title="Services" id="basic-nav-dropdown">
-                    <MenuItem eventKey={3.1}> Create a Post </MenuItem>
-                    <MenuItem eventKey={3.2} to='/posts'> View All Posts</MenuItem>
-                   </NavDropdown>
+                  <NavItem eventKey={2}><Link to='/about'>About</Link></NavItem>
+                  <NavItem eventKey={2}><Link to='/posts'>All Posts</Link></NavItem>
+                  
               </Nav>
              </Navbar.Collapse>
             </Navbar>
