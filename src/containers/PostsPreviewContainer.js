@@ -2,11 +2,36 @@ import React, { Component } from 'react'
 
 
 export default class PostsPreviewContainer extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      posts: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3005/api/posts')
+      .then(response => response.json())
+      
+      .then(data =>{
+        this.setState({posts: data})
+      });
+      
+      
+  }
   render() {
     return (
       <div>
-        Posts
+        {this.state.posts.map((post) => {
+          return(
+            <div className="tile" key={post.id} >
+              <h4>{post.title}</h4>
+              <p>{post.author}</p>
+            </div>
+          )       
+        })}
       </div>
-    )
+    );
   }
 }
