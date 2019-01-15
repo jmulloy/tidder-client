@@ -3,6 +3,7 @@ export default function postsReducer (
         loading: false, 
         posts: []}, 
         action) {
+            console.log(action)
     switch ( action.type ) {
         case 'LOADING_POSTS':
          return Object.assign({}, state, {loading: true})

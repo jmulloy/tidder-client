@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchPosts } from '../actions/postsActions.js'
 
-
-export default class PostsPreviewContainer extends Component {
+class PostsPreviewContainer extends Component {
 
   constructor(props) {
     super(props)
@@ -11,14 +12,7 @@ export default class PostsPreviewContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3005/api/posts')
-      .then(response => response.json())
-      
-      .then(data =>{
-        this.setState({posts: data})
-      });
-      
-      
+    this.props.fetchPosts()
   }
   render() {
     return (
@@ -42,4 +36,8 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(PostsPreviewContainer)
+function mapStateToProps(state){
+  return {posts: state.posts.posts}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostsPreviewContainer)
