@@ -7,7 +7,7 @@ export function fetchPosts() {
     }
 }
 
-export function fetchSinglePosts(postId) {
+export function fetchSinglePost(postId) {
     return(dispatch) => {
         dispatch({type: 'START_ADDING_POSTS_REQUEST'})
         return fetch('http://localhost:3005/api/posts/${postId}')
