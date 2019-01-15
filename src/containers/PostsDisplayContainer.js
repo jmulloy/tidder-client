@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchSinglePost } from '../actions/postsActions.js'
+import SinglePost from '../components/SinglePost.js'
 
 class PostsDisplayContainer extends Component {
 
@@ -11,7 +12,7 @@ class PostsDisplayContainer extends Component {
     render() {
         return (
             <div>
-                This is where the single post will be displayed. 
+            {this.props.post ? <SinglePost post={this.props.post} /> : null}
             </div>
         )
     }
