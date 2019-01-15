@@ -21,8 +21,18 @@
   height: 150px;
   width: 150px;
   margin: 10px;
-  background: lightyellow;
+  background: rgb(5, 243, 231);
   float: left;
   font-size: 11px;
   text-align: left;
+}
+
+.post-block {
+  height: 300px;
+  width: 500px;
+  margin: auto;
+  background: rgb(187, 187, 185);
+  float: center;
+  font-size: 18px;
+  text-align: center;
 }
