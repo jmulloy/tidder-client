@@ -28,11 +28,11 @@
 }
 
 .post-block {
+  font-size: 24px;
   height: 300px;
   width: 500px;
   margin: auto;
   background: rgb(187, 187, 185);
   float: center;
-  font-size: 18px;
   text-align: center;
 }
