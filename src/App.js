@@ -18,6 +18,7 @@ class App extends Component {
         <Route exact path='/about' component={About} />
         <Route exact path='/posts' component={PostsPreviewContainer} />
         <Route exact path='/posts/:postId' component={PostsDisplayContainer} />
+        
       </Switch>
         
       </div>

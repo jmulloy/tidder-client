@@ -9,7 +9,7 @@ export function fetchPosts() {
 
 export const addPost = post => {
     return {
-        type: 'CREATE_POST_SUCCESS',
+        type: 'ADD_POST',
         post
     }
 }
@@ -23,16 +23,19 @@ export function fetchSinglePost(postId) {
     }
 }
 
+
 export function createPost(post) {
     return dispatch => {
         return fetch('http://localhost:3005/api/posts', {
             method: "POST",
             headers: {
-                'Conent-Type': 'application/json' 
+                'Content-Type': 'application/json' 
             },
             body: JSON.stringify({post:post})
         })
         .then(response => response.json())
-        .then(post => dispatch(addPost(post)))
+        .then(post => {
+
+            dispatch(addPost(post))})
     }
 }

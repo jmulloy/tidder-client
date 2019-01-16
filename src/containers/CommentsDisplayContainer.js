@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Comment from '../components/Comment.js';
 import { fetchComments } from '../actions/commentsActions.js'
 import { connect } from 'react-redux'
+import CommentForm from '../components/CommentForm'
+
 
 class CommentsDisplayContainer extends Component {
 
@@ -18,6 +20,7 @@ class CommentsDisplayContainer extends Component {
         <div className="comments-container">
           <h2> Comments </h2>
           {this.commentsDisplay()}
+          <CommentForm />
         </div>
       );
     }

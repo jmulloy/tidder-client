@@ -8,7 +8,8 @@ export default function commentsReducer (
             return {...state, loading:true}
         case 'ADD_COMMENTS':
         return {loading:false, comments: action.comments}
-     
+        case 'ADD_COMMENT':
+        return {...state, comments: [...state.comments, action.comment] } 
       default:
         return state;
     }

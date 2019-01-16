@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchSinglePost } from '../actions/postsActions.js'
 import SinglePost from '../components/SinglePost.js'
 import CommentDisplayContainer from './CommentsDisplayContainer'
-
+import CommentForm from '../components/CommentForm'
 class PostsDisplayContainer extends Component {
 
     componentDidMount() {
@@ -15,6 +15,7 @@ class PostsDisplayContainer extends Component {
             <div>
             {this.props.post ? <SinglePost post={this.props.post} /> : null}
             {this.props.post ? <CommentDisplayContainer post={this.props.post} /> : null}
+                
             </div>
         )
     }
