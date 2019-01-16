@@ -11,8 +11,9 @@ export default function postsReducer (
          
          return {...state, loading: false, posts: action.posts}
         case 'ADD_SINGLE_POST':
-        return {...state, loading: false, post: action.post}
-         default:
+        return {...state, loading: false, post: action.post} 
+         
+          default:
         return state;
     }
   

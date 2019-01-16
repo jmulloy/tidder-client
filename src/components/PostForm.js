@@ -1,9 +1,10 @@
-import React from 'react';
-
+import React from 'react'
+import { connect } from 'react-redux'
+import { updatePostFormData } from '../actions/postForm'
 
 class PostForm extends React.Component {
-    constructor(props) {
-      super(props);
+    constructor() {
+      super();
       this.state = {
           title: '',
           author: '',
@@ -15,11 +16,13 @@ class PostForm extends React.Component {
     }
   
     handleChange(event) {
-      this.setState({
-          title: event.target.title,
-          author: event.traget.author,
-          content: event.target.content
-        });
+      const {title, author, content} = event.target;
+      const currentPostFormData = Object.assign({}, this.props.PostFormData, {
+          [title]: title,
+          [author]: author,
+          [content]: content
+      })
+      this.props.updatePostFormData(currentPostFormData)
     }
   
     handleSubmit(event) {
@@ -32,25 +35,43 @@ class PostForm extends React.Component {
       })
     }
   
-    render() {
-      return (
-          <div className='post-form'>
-          <h2>Create a Post</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>Title: </label><br/>
-            <input type="text" title={this.state.title} onChange={this.handleChange} />
-          <br/>
-          <label> Author: </label><br/>
-            <input type="text" author={this.state.author} onChange={this.handleChange} />
-          <br/>
-          <label>Content: </label> <br/>
-            <textarea type="text" content={this.state.content} onChange={this.handleChange} /> <br/>
-          
-          <input type="submit" value="Submit" />
-        </form>
-        </div>
-      );
+    render() {      
+        return (
+            <div className="post-form">
+                <h2>Add A Thought or Idea</h2>
+                <form>
+                    <label htmlFor="title">Title:</label><br/>
+                    <input
+                    type="text"
+                    name="title"
+                    onChange={this.handlechange}
+                    title={this.state.title}
+                    /><br/>
+                    <label htmlFor="author">Author:</label><br/>
+                    <input
+                    type="text"
+                    name="author"
+                    onChange={this.handlechange}
+                    author={this.state.author}
+                    /><br/>
+                    <label htmlFor="content">Content:</label><br/>
+                    <textarea
+                    type="text"
+                    name="conent"
+                    onChange={this.handlechange}
+                    content={this.state.content}
+                    /><br/>
+                    <input type="submit" value='Submit'/>
+                </form>
+            </div>
+        )
     }
   }
 
-  export default PostForm
+  const mapStateToProps = state => {
+    return {
+        postFormData: state.postFormData
+    }
+}
+
+  export default connect (mapStateToProps, { updatePostFormData, addPost })(PostForm)
