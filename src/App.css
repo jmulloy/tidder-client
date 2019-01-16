@@ -32,7 +32,7 @@
   height: 225px;
   width: 500px;
   margin: auto;
-  background: rgb(52, 110, 4);
+  background: rgb(231, 0, 0);
   float: center;
   text-align: center;
 }
@@ -49,7 +49,7 @@
 
 .post-form {
   font-size: 24px;
-  height: 300px;
+  height: 400px;
   width: 400px;
   margin: auto;
   background: rgb(252, 250, 250);

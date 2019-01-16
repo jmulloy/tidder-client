@@ -16,7 +16,7 @@ export const addComment = comment => {
 
 export function createComment(comment) {
     return dispatch => {
-        return fetch('http://localhost:3005/api/posts', {
+        return fetch('http://localhost:3005/api/comments', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json' 
@@ -24,7 +24,7 @@ export function createComment(comment) {
             body: JSON.stringify({comment:comment})
         })
         .then(response => response.json())
-        .then(post => {
+        .then(comment => {
 
             dispatch(addComment(comment))})
     }
