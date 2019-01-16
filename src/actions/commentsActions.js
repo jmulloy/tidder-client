@@ -1,8 +1,8 @@
 export function fetchComments() {
     return (dispatch) => {
-        dispatch({type: 'START_ADDING_POSTS_REQUEST'})
-        return fetch('http://localhost:3005/api/posts')
+        dispatch({type: 'START_ADDING_COMMENTS_REQUEST'})
+        return fetch('http://localhost:3005/api/comments')
         .then(response => response.json())
-        .then(posts => dispatch({type: 'ADD_COMMENTS', posts}))
+        .then(comments => dispatch({type: 'ADD_COMMENTS', comments}))
     }
 }

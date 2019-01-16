@@ -3,8 +3,8 @@ import React from 'react'
 const SinglePost = (props) => {
     return (
         <div className="post-block">
-            <h3>{props.post.title}</h3>
-            <h2>{props.post.author}</h2>
+            <h2>{props.post.title}</h2>
+            <h3>{props.post.author}</h3>
             <p>{props.post.content}</p>
         </div>
     )

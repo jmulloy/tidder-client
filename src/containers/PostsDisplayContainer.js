@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchSinglePost } from '../actions/postsActions.js'
 import SinglePost from '../components/SinglePost.js'
+import CommentDisplayContainer from './CommentsDisplayContainer'
 
 class PostsDisplayContainer extends Component {
 
@@ -13,6 +14,7 @@ class PostsDisplayContainer extends Component {
         return (
             <div>
             {this.props.post ? <SinglePost post={this.props.post} /> : null}
+            {this.props.post ? <CommentDisplayContainer post={this.props.post} /> : null}
             </div>
         )
     }
