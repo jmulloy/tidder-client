@@ -21,7 +21,7 @@
   height: 150px;
   width: 150px;
   margin: 10px;
-  background: rgb(5, 243, 231);
+  background: #05f311;
   float: left;
   font-size: 11px;
   text-align: left;
@@ -32,7 +32,7 @@
   height: 225px;
   width: 500px;
   margin: auto;
-  background: rgb(187, 187, 185);
+  background: rgb(52, 110, 4);
   float: center;
   text-align: center;
 }

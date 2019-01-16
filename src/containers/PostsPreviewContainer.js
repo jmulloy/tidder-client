@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions/postsActions.js'
 import  PostDebut  from '../components/PostDebut'
+import PostForm from '../components/PostForm.js'
 
 class PostsPreviewContainer extends Component {
 
@@ -18,6 +19,7 @@ class PostsPreviewContainer extends Component {
       <div>
         <h2> Posts </h2>
         {this.displayPostsDebut()}
+        <PostForm />
       </div>
     );
   }
