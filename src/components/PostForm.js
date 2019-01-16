@@ -6,8 +6,8 @@ class PostForm extends React.Component {
       super(props);
       this.state = {
           title: '',
-          content: '',
-          author: ''
+          author: '',
+          content: ''
         };
   
       this.handleChange = this.handleChange.bind(this);
@@ -35,22 +35,17 @@ class PostForm extends React.Component {
     render() {
       return (
           <div className='post-form'>
+          <h2>Create a Post</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Title:
+          <label>Title: </label><br/>
             <input type="text" title={this.state.title} onChange={this.handleChange} />
-          </label>
           <br/>
-          <label>
-            Author:
+          <label> Author: </label><br/>
             <input type="text" author={this.state.author} onChange={this.handleChange} />
-          </label>
           <br/>
-          <label>
-            Content:
-            <textarea type="text" content={this.state.content} onChange={this.handleChange} />
-          </label>
-          <br/>
+          <label>Content: </label> <br/>
+            <textarea type="text" content={this.state.content} onChange={this.handleChange} /> <br/>
+          
           <input type="submit" value="Submit" />
         </form>
         </div>
