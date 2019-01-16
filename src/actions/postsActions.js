@@ -7,7 +7,7 @@ export function fetchPosts() {
     }
 }
 
-const addPost = post => {
+export const addPost = post => {
     return {
         type: 'CREATE_POST_SUCCESS',
         post

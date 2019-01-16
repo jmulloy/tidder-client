@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { updatePostFormData } from '../actions/postForm'
-
+import { addPost } from '../actions/postsActions'
 class PostForm extends React.Component {
     constructor() {
       super();
@@ -11,8 +11,7 @@ class PostForm extends React.Component {
           content: ''
         };
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      
     }
   
     handleChange(event) {
@@ -25,15 +24,10 @@ class PostForm extends React.Component {
       this.props.updatePostFormData(currentPostFormData)
     }
   
-    handleSubmit(event) {
-      event.preventDefault();
-      this.props.addPost(this.state)
-      this.setState({
-          title: '',
-          author: '',
-          content: ''
-      })
-    }
+    handleOnSubmit = event => {
+        event.preventDefault()
+        this.props.createPost(this.props.postFormData)
+      }
   
     render() {      
         return (

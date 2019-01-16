@@ -6,7 +6,7 @@ export default (state = {
 
     switch ( action.type ) {
         case 'UPDATE_DATA':
-         return action.PostFormData
+         return action.postFormData
 
         default:
             return state;

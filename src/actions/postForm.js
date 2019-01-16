@@ -6,3 +6,9 @@ export const updatePostFormData = PostFormData => {
         PostFormData
     }
 }
+
+export const resetPostForm = () => {
+    return {
+        type: 'RESET_POST_FORM'
+    }
+}
