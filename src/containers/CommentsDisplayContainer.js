@@ -20,7 +20,7 @@ class CommentsDisplayContainer extends Component {
         <div className="comments-container">
           <h2> Comments </h2>
           {this.commentsDisplay()}
-          <CommentForm />
+          <CommentForm post={this.props.post}/>
         </div>
       );
     }

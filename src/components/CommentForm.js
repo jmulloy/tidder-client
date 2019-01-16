@@ -1,13 +1,16 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
+import { createComment } from '../actions/commentsActions'
 class CommentForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             author: '',
             content: ''
         }
     }
+
+    
 
     handleChange = event => {
         this.setState({
@@ -17,14 +20,17 @@ class CommentForm extends React.Component {
 
     handleOnSubmit = event => {
         event.preventDefault()
-        this.props.createComment(this.state)
+        const commentData = Object.assign({}, this.state, {
+            post_id: this.props.post.id
+        })
+        this.props.createComment(commentData)
     }
-    //need post id from parent component and pass it in
+    //need post id from parent component and pass it in somewhere on line 20 
 
     render() {
         return (
             <div>
-            <form>
+            <form onSubmit={this.handleOnSubmit.bind(this)}>
                 <label htmlFor="author">Author:</label>
 
                 <input 
@@ -48,4 +54,4 @@ class CommentForm extends React.Component {
     }
 }
 
-export default CommentForm
+export default connect (null, { createComment })(CommentForm)

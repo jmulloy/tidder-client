@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { fetchSinglePost } from '../actions/postsActions.js'
 import SinglePost from '../components/SinglePost.js'
 import CommentDisplayContainer from './CommentsDisplayContainer'
-import CommentForm from '../components/CommentForm'
 class PostsDisplayContainer extends Component {
 
     componentDidMount() {
