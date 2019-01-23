@@ -32,6 +32,7 @@ class PostForm extends React.Component {
                 <form onSubmit={this.handleOnSubmit}>
                     <label htmlFor="title">Title:</label><br/>
                     <input
+                    required
                     type="text"
                     name="title"
                     value={this.state.title}
@@ -39,6 +40,7 @@ class PostForm extends React.Component {
                     /><br/>
                     <label htmlFor="author">Author:</label><br/>
                     <input
+                    required
                     type="text"
                     name="author"
                     onChange={this.handleChange}
@@ -46,6 +48,7 @@ class PostForm extends React.Component {
                     /><br/>
                     <label htmlFor="content">Content:</label><br/>
                     <textarea
+                    required
                     type="text"
                     name="content"
                     onChange={this.handleChange}

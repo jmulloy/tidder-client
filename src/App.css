@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-image: 'https://unsplash.com/photos/hqStjd1C3vk';
+}
+
+.index{
+  background-image: url(https://unsplash.com/photos/hqStjd1C3vk);
+  background-size: cover;
 }
 
 .App-logo {
@@ -32,7 +38,7 @@
   height: 225px;
   width: 500px;
   margin: auto;
-  background: rgb(231, 0, 0);
+  background: rgb(189, 187, 186);
   float: center;
   text-align: center;
 }
