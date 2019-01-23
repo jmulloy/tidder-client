@@ -34,6 +34,7 @@ class CommentForm extends React.Component {
                 <label htmlFor="author">Author:</label>
 
                 <input 
+                required
                 type="text"
                 name="author"
                 value={this.state.author}
@@ -41,6 +42,7 @@ class CommentForm extends React.Component {
                 /><br/>
                 <label htmlFor="content">Content:</label>
                 <textarea
+                required
                  type="text"
                  name="content"
                  value={this.state.content}
