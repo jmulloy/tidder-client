@@ -25,6 +25,7 @@ export function fetchSinglePost(postId) {
 
 
 export function createPost(post) {
+    console.log('C')
     return dispatch => {
         return fetch('http://localhost:3005/api/posts', {
             method: "POST",
@@ -35,7 +36,10 @@ export function createPost(post) {
         })
         .then(response => response.json())
         .then(post => {
+            console.log('D')
+            dispatch(addPost(post))
+        })
 
-            dispatch(addPost(post))})
     }
+    console.log('E')
 }

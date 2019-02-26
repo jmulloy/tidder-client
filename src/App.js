@@ -6,7 +6,7 @@ import About from './components/About.js'
 import PostsPreviewContainer from './containers/PostsPreviewContainer.js'
 import PostsDisplayContainer from './containers/PostsDisplayContainer'
 
-import { Switch, Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 class App extends Component {
   render() {

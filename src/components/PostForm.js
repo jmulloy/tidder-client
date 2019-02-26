@@ -22,7 +22,9 @@ class PostForm extends React.Component {
   
     handleOnSubmit = event => {
         event.preventDefault()
+        console.log('A')
         this.props.createPost(this.state)
+        console.log('B')
       }
   
     render() {      
