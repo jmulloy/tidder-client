@@ -1,7 +1,7 @@
 export function fetchPosts() {
     return (dispatch) => {
         dispatch({type: 'START_ADDING_POSTS_REQUEST'})
-        return fetch('http://localhost:3005/api/posts')
+        return fetch('https://tidderapi.herokuapp.com/api/posts')
         .then(response => response.json())
         .then(posts => dispatch({type: 'FETCH_POSTS', posts}))
     }
@@ -17,7 +17,7 @@ export const addPost = post => {
 export function fetchSinglePost(postId) {
     return(dispatch) => {
         dispatch({type: 'START_ADDING_POSTS_REQUEST'})
-        return fetch(`http://localhost:3005/api/posts/${postId}`)
+        return fetch(`https://tidderapi.herokuapp.com/api/posts/${postId}`)
         .then(response => response.json())
         .then(post => dispatch({type: 'ADD_SINGLE_POST', post}))
     }
@@ -27,7 +27,7 @@ export function fetchSinglePost(postId) {
 export function createPost(post) {
     console.log('C')
     return dispatch => {
-        return fetch('http://localhost:3005/api/posts', {
+        return fetch('https://tidderapi.herokuapp.com/api/posts', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json' 
