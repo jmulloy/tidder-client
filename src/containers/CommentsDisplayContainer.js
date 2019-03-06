@@ -15,7 +15,7 @@ class CommentsDisplayContainer extends Component {
     }
   
     render() {
-      console.log(this.props.comments)
+      
       return (
         <div className="comments-container">
           <h2> Comments </h2>

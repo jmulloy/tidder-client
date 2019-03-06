@@ -11,7 +11,7 @@ class SinglePost extends Component {
     handleClick = (event) => {
         event.preventDefault();
         let newLikes = this.state.likes + 1
-        this.setState({likes: newLikes})
+        this.setState({likes: newLikes}, () => this.props.updateLikes(this.props.post.id, this.state.likes))
     }
 render() {
     return (

@@ -57,8 +57,11 @@ export function createPost(post) {
              },
              body: JSON.stringify({post: post_likes})
          })
-         .then(response => response.json())
+         .then(response => {
+             console.log(response)
+            response.json()})
          .then(post => {
+             
              dispatch(updatePost(post));
          })
      }
