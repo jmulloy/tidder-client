@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import { updateLikes } from '../actions/postsActions'
+import { connect } from 'react-redux'
 
 class SinglePost extends Component {
 
@@ -25,7 +27,15 @@ render() {
     )
 }
 }
-export default SinglePost
+
+const mapDispatchToProps = dispatch => {
+    return {
+        updateLikes: (id, likes) => {
+            dispatch(updateLikes(id, likes))
+        }
+    }
+}
+export default connect(null, mapDispatchToProps)(SinglePost)
 
 // const SinglePost = (props) => {
     
