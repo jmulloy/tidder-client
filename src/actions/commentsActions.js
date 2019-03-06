@@ -1,4 +1,4 @@
-const BASEURL = "http://localhost:3005"
+const BASEURL = "https://tidderapi.herokuapp.com"
 
 export function fetchComments() {
     return (dispatch) => {
