@@ -51,7 +51,7 @@ export function createPost(post) {
              likes: likes
          }
          return fetch(`${BASEURL}/api/posts/${id}`, {
-             method: "PUT",
+             method: "PATCH",
              headers: {
                  'Content-Type': 'application/json'
              },
