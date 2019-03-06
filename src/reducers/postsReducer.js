@@ -16,7 +16,8 @@ export default function postsReducer (
          return {...state, loading:false, post: action.post}
         case 'ADD_POST':
         return {...state, posts: [...state.posts, action.post] } 
-         
+         case 'UPDATED_LIKES_SUCCESS':
+         return {...state, post: action.post}
           default:
         return state;
     }
