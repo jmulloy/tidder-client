@@ -7,6 +7,9 @@ render() {
             <h2>{this.props.post.title}</h2>
             <h3>{this.props.post.author}</h3>
             <p>{this.props.post.content}</p> 
+            <div className="postlikes">
+                <p>this post has {this.props.post.likes} likes</p>
+            </div>
         </div>
     )
 }
