@@ -5,6 +5,12 @@ class SinglePost extends Component {
     state = {
         likes: this.props.post.likes
     }
+
+    handleClick = (event) => {
+        event.preventDefault();
+        let newLikes = this.state.likes + 1
+        this.setState({likes: newLikes})
+    }
 render() {
     return (
         <div className="post-block">
@@ -13,7 +19,7 @@ render() {
             <p>{this.props.post.content}</p> 
             <div className="postlikes">
                 <p>This post has {this.state.likes} likes</p>
-                <button className="btn btn-primary"> Like this post!</button>
+                <button className="btn btn-primary" onClick={this.handleClick}> Like this post!</button>
             </div>
         </div>
     )
