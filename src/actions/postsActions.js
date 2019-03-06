@@ -1,7 +1,10 @@
+const BASEURL = "http://localhost:3005"
+
+
 export function fetchPosts() {
     return (dispatch) => {
         dispatch({type: 'START_ADDING_POSTS_REQUEST'})
-        return fetch('https://tidderapi.herokuapp.com/api/posts')
+        return fetch(`${BASEURL}/api/posts`)
         .then(response => response.json())
         .then(posts => dispatch({type: 'FETCH_POSTS', posts}))
     }
@@ -17,7 +20,7 @@ export const addPost = post => {
 export function fetchSinglePost(postId) {
     return(dispatch) => {
         dispatch({type: 'START_ADDING_POSTS_REQUEST'})
-        return fetch(`https://tidderapi.herokuapp.com/api/posts/${postId}`)
+        return fetch(`${BASEURL}/api/posts/${postId}`)
         .then(response => response.json())
         .then(post => dispatch({type: 'ADD_SINGLE_POST', post}))
     }
@@ -26,7 +29,7 @@ export function fetchSinglePost(postId) {
 
 export function createPost(post) {
     return dispatch => {
-        return fetch('https://tidderapi.herokuapp.com/api/posts', {
+        return fetch(`${BASEURL}/api/posts`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json' 
