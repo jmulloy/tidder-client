@@ -1,7 +1,9 @@
+const BASEURL = "http://localhost:3005"
+
 export function fetchComments() {
     return (dispatch) => {
         dispatch({type: 'START_ADDING_COMMENTS_REQUEST'})
-        return fetch('https://tidderapi.herokuapp.com/api/comments')
+        return fetch(`${BASEURL}/api/comments`)
         .then(response => response.json())
         .then(comments => dispatch({type: 'ADD_COMMENTS', comments}))
     }
@@ -16,7 +18,7 @@ export const addComment = comment => {
 
 export function createComment(comment) {
     return dispatch => {
-        return fetch('https://tidderapi.herokuapp.com/api/comments', {
+        return fetch(`${BASEURL}/api/comments`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json' 
