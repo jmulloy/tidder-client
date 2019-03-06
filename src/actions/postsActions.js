@@ -43,3 +43,30 @@ export function createPost(post) {
 
     }
  }
+
+
+ export function updateLikes(id, likes) {
+     return (dispatch) => {
+         const post_likes = {
+             likes: likes
+         }
+         return fetch(`${BASEURL}/api/posts/${id}`, {
+             method: "PUT",
+             headers: {
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({post: post_likes})
+         })
+         .then(response => response.json())
+         .then(post => {
+             dispatch(updatePost(post));
+         })
+     }
+ }
+
+ function updatePost(post) {
+     return {
+         type: 'UPDATE_LIKES_SUCCESS',
+         post
+     }
+ }
