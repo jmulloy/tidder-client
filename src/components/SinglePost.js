@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 
 class SinglePost extends Component {
+
+    state = {
+        likes: this.props.post.likes
+    }
 render() {
     return (
         <div className="post-block">
@@ -8,7 +12,7 @@ render() {
             <h3>{this.props.post.author}</h3>
             <p>{this.props.post.content}</p> 
             <div className="postlikes">
-                <p>this post has {this.props.post.likes} likes</p>
+                <p>This post has {this.state.likes} likes</p>
             </div>
         </div>
     )

@@ -43,6 +43,10 @@
   text-align: center;
 }
 
+div.postlikes p, div.postlikes button {
+  text-align: center;
+}
+
 .comment-block {
   font-size: 24px;
   height: 100px;
