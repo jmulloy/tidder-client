@@ -13,6 +13,7 @@ render() {
             <p>{this.props.post.content}</p> 
             <div className="postlikes">
                 <p>This post has {this.state.likes} likes</p>
+                <button className="btn btn-primary"> Like this post!</button>
             </div>
         </div>
     )
