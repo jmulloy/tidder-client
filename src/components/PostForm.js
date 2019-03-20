@@ -61,10 +61,6 @@ class PostForm extends React.Component {
     }
   }
 
-//   const mapStateToProps = state => {
-//     return {
-//         postFormData: state.postFormData
-//     }
-// }
+
 
   export default connect (null, { createPost })(PostForm)
