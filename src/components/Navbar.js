@@ -11,13 +11,13 @@ class Header extends React.Component {
               <Link to='/'>Tidder</Link>
               </Navbar.Brand>
              
-             <Navbar.Collapse>
+             
               <Nav>
                   <NavItem eventKey={2}><Link to='/about'>About</Link></NavItem>
                   <NavItem eventKey={2}><Link to='/posts'>All Posts</Link></NavItem>
                   
               </Nav>
-             </Navbar.Collapse>
+            
             </Navbar>
         )
     }
