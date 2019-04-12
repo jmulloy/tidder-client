@@ -9,11 +9,13 @@ class Header extends React.Component {
              
               <Navbar.Brand>
               <Link to='/'>Tidder</Link>
+              
+              <Link to='/about'>About</Link>
               </Navbar.Brand>
              
              
               <Nav>
-                  <NavItem eventKey={2}><Link to='/about'>About</Link></NavItem>
+                  {/* <NavItem eventKey={2}><Link to='/about'>About</Link></NavItem> */}
                   <NavItem eventKey={2}><Link to='/posts'>All Posts</Link></NavItem>
                   
               </Nav>
