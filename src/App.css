@@ -1,15 +1,13 @@
 .App {
   text-align: center;
-  background: 'https://unsplash.com/photos/hqStjd1C3vk';
+  background-image: 'https://unsplash.com/photos/hqStjd1C3vk';
+  background: rgba(250, 213, 3, 0.795);
  
 }
 
 .index{
   background: url(https://unsplash.com/photos/hqStjd1C3vk);
 }
-
-
-
 
 
 
