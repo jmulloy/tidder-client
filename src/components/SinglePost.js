@@ -23,6 +23,10 @@ class SinglePost extends Component {
     editClick = (event) => {
         event.preventDefault();
     }
+
+    deleteClick = (event) => {
+        event.preventDefault()
+    }
 render() {
     return (
         <div className="post-block">
