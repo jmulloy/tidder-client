@@ -22,8 +22,6 @@ class SinglePost extends Component {
 
     editClick = (event) => {
         event.preventDefault();
-        let newEdit = this.props.post.edit
-        this.setState({edit: newEdit}, () => this.props.editPost(this.props.post.id, this.state.likes))
     }
 render() {
     return (
