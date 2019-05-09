@@ -19,6 +19,12 @@ class SinglePost extends Component {
         let newLikes = this.props.post.likes + 1
         this.setState({likes: newLikes}, () => this.props.updateLikes(this.props.post.id, this.state.likes))
     }
+
+    editClick = (event) => {
+        event.preventDefault();
+        let newEdit = this.props.post.edit
+        this.setState({edit: newEdit}, () => this.props.editPost(this.props.post.id, this.state.likes))
+    }
 render() {
     return (
         <div className="post-block">
@@ -28,7 +34,7 @@ render() {
             <div className="postlikes">
                 <p>This post has {this.state.likes} likes</p>
                 <button className="btn btn" onClick={this.handleClick}> Like this post!</button>
-                <button className="btn btn-primary">Edit</button>
+                <button className="btn btn-primary" onClick={this.editClick}>Edit</button>
                 <button className="btn btn-danger">Delete</button>
             </div>
         </div>
