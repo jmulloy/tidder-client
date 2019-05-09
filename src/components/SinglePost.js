@@ -27,8 +27,9 @@ render() {
             <p>{this.props.post.content}</p> 
             <div className="postlikes">
                 <p>This post has {this.state.likes} likes</p>
-                <button className="btn btn-primary" onClick={this.handleClick}> Like this post!</button>
-                <button className="btn btn-secondary">Edit</button>
+                <button className="btn btn" onClick={this.handleClick}> Like this post!</button>
+                <button className="btn btn-primary">Edit</button>
+                <button className="btn btn-danger">Delete</button>
             </div>
         </div>
     )
